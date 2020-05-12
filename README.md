@@ -1,68 +1,55 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Boilerplate for Firebase Authentication with React
 
-## Available Scripts
+Created using instructions from - https://medium.com/firebase-developers/how-to-setup-firebase-authentication-with-react-in-5-minutes-maybe-10-bb8bb53e8834
 
-In the project directory, you can run:
+## Steps
 
-### `yarn start`
+1. Clone the repository using
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+git clone https://github.com/maxengel99/react-firebase-auth-boilerplate.git
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+2. Initialize your project and install the dependencies
 
-### `yarn test`
+```
+npm init
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Ensure you have a firebase account and project. Follow these steps if you do not have one. (Steps taken from another source)
 
-### `yarn build`
+### Firebase setup
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+a. Start <a href="https://console.firebase.google.com/u/0/">creating a Firebase project</a> if you don’t have one already.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+b. Go to the Authentication page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+c. Click on the “Sign-in method” tab and make sure you have Google-enabled as a sign-in provider.
 
-### `yarn eject`
+![Firebase Authentication Console](readme-photos/firebase-auth-console.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+d. Scroll down a bit and also make sure you have localhost as an Authorized Domain:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Firebase Authorized Domains](readme-photos/firebase-authorized-domains.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+e. On the top of the Authentication page, click on the “Web Setup” button. It will show up a modal just like this:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![Firebase Authorized Domains](readme-photos/firebase-credentials.png)
 
-## Learn More
+f. Create a .env file. Copy the config variable and paste it into your .env file. It should look something like this:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+REACT_APP_FIREBASE_KEY=[insert firebase key]
+REACT_APP_FIREBASE_AUTH_DOMAIN=[insert authorized domain]
+REACT_APP_FIREBASE_DATABASE_URL=[insert database url]
+REACT_APP_FIREBASE_STORAGE_BUCKET=[insert storage bucket]
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=[insert messaging sender ID]
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. Your project should run now using
 
-### Code Splitting
+```
+npm run start
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+![Login Example](readme-photos/login-example.gif)
